@@ -1,0 +1,37 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<main role="main" class="container">
+
+    <div class="row mt-3">
+        <div class="col-lg-8 col-md-10 col-sm-12 offset-lg-2 offset-md-1">
+            <div class="container-fluid bg-light p-4 rounded">
+                <form method="POST">
+                    {% csrf_token %}
+                    <h2 class="text-center mb-4">Register to get access</h2>
+                    {{ form|crispy }}
+                    
+{#                    <div class="form-check mt-3">#}
+{#                        <input type="checkbox" class="form-check-input" id="termsCheckbox">#}
+{#                        <label class="form-check-label" for="termsCheckbox">#}
+{#                            I accept the <a href="#">Terms of Service</a> and <a href="#">Privacy Notice</a>#}
+{#                        </label>#}
+{#                    </div>#}
+
+                    <button class="btn btn-info mt-3" type="submit">Sign Up</button>
+                </form>
+
+                <hr class="my-4">
+
+                <p class="text-muted">
+                    Already Have An Account? <a href="/login">Sign In</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock content %}

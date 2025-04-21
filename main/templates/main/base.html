@@ -1,0 +1,165 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>NLP-LAB(IIT BHU)</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'main/assets/img/iitlogo.png' %}" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'main/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'main/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'main/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'main/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'main/assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'main/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'main/style.css' %}" rel="stylesheet">
+  <!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI/t1fWCfSVi8h07NYPcf7s7dRPeCKK/6p7S60sU=" crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.course-item').froalaEditor({
+            codeMirror: false,
+            // Other initialization options
+        });
+    });
+</script>
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="{% static 'main/assets/img/iit_logo_big.png' %}" alt="">
+        <span>NLP-LAB</span>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="{% url 'index' %}">Home</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'courses' %}">Courses</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'faculties' %}">Faculty</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'events' %}">Events</a></li>
+          <li><a class="nav-link scrollto" href="#about">Oppourtunities</a></li>
+         
+
+          <li><a class="nav-link scrollto" href="{% url 'contact' %}">Contact</a></li>
+          
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+  
+<section>
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+  {% if messages %}
+  {% for message in messages %}
+  {% if message.tags == 'success' %}
+  <div class="alert alert-success alert-dismissible" role="alert">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      {{ message|safe|escape }}
+  </div>
+  {% elif message.tags == 'error' %}
+  <div class="alert alert-danger alert-dismissible" role="alert">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      {{ message|safe }}
+  </div>
+  {% elif message.tags == 'info' %}
+  <div class="alert alert-info alert-dismissible" role="alert">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      {{ message|safe|escape }}
+  </div>
+  {% elif message.tags == 'warning' %}
+  <div class="alert alert-warning alert-dismissible" role="alert">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      {{ message|safe|escape }}
+  </div>
+  {% endif %}
+  {% endfor %}
+  {% endif %}
+    {% block content %}
+
+    {% endblock content %}
+</section>
+ 
+    
+             
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+   <!-- Vendor JS Files -->
+   <script src="{% static 'main/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+   <script src="{% static 'main/assets/vendor/aos/aos.js' %}"></script>
+   <script src="{% static 'main/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+   <script src="{% static 'main/assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+   <script src="{% static 'main/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+   <script src="{% static 'main/assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+   <script src="{% static 'main/assets/vendor/php-email-form/validate.js' %}"></script>
+
+   <!-- Template Main JS File -->
+   <script src="{% static 'main/assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".event-desc").forEach(function (desc, index) {
+      const imgs = desc.querySelectorAll("img");
+      if (imgs.length > 1) {
+        const swiperContainer = document.createElement("div");
+        swiperContainer.classList.add("swiper", `swiper-${index}`);
+        swiperContainer.innerHTML = `
+          <div class="swiper-wrapper">
+            ${Array.from(imgs).map(img => `<div class="swiper-slide">${img.outerHTML}</div>`).join('')}
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        `;
+        // Clear existing images
+        imgs.forEach(img => img.remove());
+        desc.appendChild(swiperContainer);
+
+        new Swiper(`.swiper-${index}`, {
+          loop: true,
+          pagination: {
+            el: `.swiper-${index} .swiper-pagination`,
+            clickable: true,
+          },
+          navigation: {
+            nextEl: `.swiper-${index} .swiper-button-next`,
+            prevEl: `.swiper-${index} .swiper-button-prev`,
+          },
+        });
+      }
+    });
+  });
+</script>

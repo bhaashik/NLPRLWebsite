@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="7ef58755-4d00-421e-bf2a-8607df2f84ce" name="NLP-Research-Lab-Website">
+        <fileTransfer rootFolder="/home/anil" accessType="SFTP" host="172.16.16.17" port="22" sshConfigId="22a4bba1-4f43-414c-ab49-531ee34b7ce9" sshConfig="anil@172.16.16.17:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
