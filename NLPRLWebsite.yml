@@ -36,6 +36,7 @@ dependencies:
       - charset-normalizer==3.4.1
       - cryptography==44.0.2
       - django==5.0.7
+      - crispy-bootstrap4
       - django-appconf==1.1.0
       - django-captcha==1.0.0
       - django-crispy-forms==2.4
