@@ -26,14 +26,19 @@ def events(request):
     return render(request, 'main/events.html', {'events': events})
 
 
-
 class CourseDetailView(View):
     template_name = 'main/course_detail.html'
 
     def get(self, request, course_slug):
         course = get_object_or_404(Course, Course_slug=course_slug)
         return render(request, self.template_name, {'course': course})
-    
+
+class EventDetailView(View):
+    template_name = 'main/event_detail.html'
+
+    def get(self, request, event_slug):
+        event = get_object_or_404(Event, Event_slug=event_slug)
+        return render(request, self.template_name, {'event': event})
 
 class ContactView(View):
     template_name = 'main/contact.html'

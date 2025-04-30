@@ -20,12 +20,10 @@ from main import views as main_views
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('register/', user_views.register, name='register'),
-    path('login/', user_views.custom_login, name='login'),
-    path('', include('main.urls')),  # Include your app's URLs
-    # path('tinymce/', include('tinymce.urls')),
-    path('froala_editor/', include('froala_editor.urls')),
-    
-
+path('admin/', admin.site.urls),
+path('register/', user_views.register, name='register'),
+path('login/', user_views.custom_login, name='login'),
+path('', include('main.urls')),  # Include your app's URLs
+# path('tinymce/', include('tinymce.urls')),
+path('froala_editor/', include('froala_editor.urls')),
 ]

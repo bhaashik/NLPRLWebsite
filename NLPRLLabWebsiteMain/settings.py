@@ -15,6 +15,9 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # Root-level static directory, including vendor
+]
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -37,14 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'users',
-    'main',
     'tinymce',
     'crispy_forms',
     'captcha',
     'froala_editor',
     'crispy_bootstrap4',
-
+    # Your apps
+    'main',  # Core app that can handle shared templates and static files
+    'users',  # App for user management and authentication
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
@@ -69,7 +72,7 @@ ROOT_URLCONF = 'NLPRLLabWebsiteMain.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],  # Shared templates in project root
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

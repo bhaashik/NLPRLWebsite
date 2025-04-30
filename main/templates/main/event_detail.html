@@ -11,15 +11,15 @@
   </div>
 </div><!-- End Breadcrumbs -->
 
-<!-- ======= Cource Details Section ======= -->
-<section id="course-details" class="course-details">
+<!-- ======= Event Details Section ======= -->
+<section id="event-details" class="event-details">
   <div class="container" data-aos="fade-up">
 
     <div class="row">
       <div class="col-lg-8">
-        <img src="{{ course.image.url }}" class="img-fluid" alt="{{ course.title }}">
-        <h3>{{ course.title }}</h3>
-        <p>{{ course.content|safe }}</p>
+        <img src="{{ event.image.url }}" class="img-fluid" alt="{{ event.title }}">
+        <h3>{{ event.title }}</h3>
+        <p>{{ event.content|safe }}</p>
       </div>
       <div class="col-lg-4">
         <!-- Additional details here -->
@@ -27,6 +27,6 @@
     </div>
 
   </div>
-</section><!-- End Cource Details Section -->
+</section><!-- End Event Details Section -->
 
 {% endblock content %}

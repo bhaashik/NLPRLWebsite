@@ -109,7 +109,7 @@ h6 {
 --------------------------------------------------------------*/
 @media screen and (max-width: 768px) {
   [data-aos-delay] {
-    transition-delay: 0 !important;
+    transition-delay: 0s;
   }
 }
 
@@ -402,7 +402,7 @@ h6 {
 #hero {
   width: 100%;
   height: 80vh;
-  background: url("{% static 'main/assets/img/gallery_cse_02.jpg' %}") top center;
+  background: rgba(0, 0, 5, 0.4);
   background-size: cover;
   position: relative;
 }
